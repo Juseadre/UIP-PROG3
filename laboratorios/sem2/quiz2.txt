@@ -1,0 +1,3 @@
+explique cuales son los modos de programacion en python
+
+1-Es algo así: Python lleva una doble vida. Es un intérprete para scripts que puede ejecutar desde la línea de comandos o como aplicación si hace clic dos veces sobre su icono. Pero también es un intérprete interactivo que puede evaluar sentencias y expresiones arbitrarias. Esto es muy útil para la depuración, programación rápida y pruebas. ¡Incluso conozco gente que usa el intérprete interactivo de Python a modo de calculadora!
