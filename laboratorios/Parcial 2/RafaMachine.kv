@@ -1,0 +1,57 @@
+#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+ScreenManager:
+	transition: FallOutTransition()
+	nom:""+nombre.text
+	Screen:
+		name:'principal'
+		BoxLayout:
+			orientation:'vertical'
+			GridLayout:
+				cols: 2
+				rows: 1
+				Label:
+					text: 'Nombre:'
+					markup: True
+					font_size: 50
+					font_name: 'calibri.ttf'
+				TextInput:
+					id: nombre
+					font_size: 45
+					font_name: 'calibri.ttf'
+					color: (0, 0, 128, 5)
+					multiline: False
+					padding: [10, 0.5 * (self.height - self.line_height)]
+			Button:
+				text: 'Siguiente'
+				markup: True
+				font_size: 40
+				font_name: 'calibri.ttf'
+				background_color: (255,69, 0, 1)
+				on_press: root.current = 'siguiente'	
+	Screen:
+		name: 'siguiente'
+		BoxLayout:
+			orientation: 'vertical'
+			GridLayout:
+				cols: 2
+				rows: 1
+				Label:
+					text: 'Hola, '+root.nom
+					font_size: 40
+					font_name: 'calibri.ttf'
+					color: (255,69, 0, 1)
+			Button:
+				text: 'Atras'
+				markup: True
+				font_size: 40
+				font_name: 'calibri.ttf'
+				background_color: (255,69, 0, 1)
+				on_press: root.current = 'principal'
+			Button:
+				text: 'Proximamente con RafaMachine'
+				on_press: root.current = 'RafaMachine'
+	Screen:
+		name:'RafaMachine'
+		VideoPlayer:
+			source:'Vindictus.mp4'
+			state:'pause'
